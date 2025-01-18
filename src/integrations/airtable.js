@@ -21,7 +21,7 @@ export const AirtableIntegration = ({ user, org, integrationParams, setIntegrati
             formData.append('org_id', org);
             const response = await axios.post(`http://localhost:8000/integrations/airtable/authorize`, formData);
             const authURL = response?.data;
-
+            console.log(authURL);
             const newWindow = window.open(authURL, 'Airtable Authorization', 'width=600, height=600');
 
             // Polling for the window to close
